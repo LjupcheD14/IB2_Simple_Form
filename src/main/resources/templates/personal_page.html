@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Personal page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 <h1>Welcome to the personal page <span th:text="${userLogin}"></span></h1>
