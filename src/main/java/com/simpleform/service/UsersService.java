@@ -16,7 +16,7 @@ public class UsersService {
     }
 
     public UsersModel registerUser(String login, String password, String email) {
-        if (login == null || password == null) {
+        if (login == null || password == null || email == null) {
             return null;
         } else {
             if (usersRepository.findFirstByLogin(login).isPresent()) {
@@ -31,7 +31,7 @@ public class UsersService {
         }
     }
 
-    public UsersModel authenticate(String login, String password) {
+    public UsersModel authenticate(String login, String password, String email) {
         return usersRepository.findByLoginAndPassword(login, password).orElse(null);
     }
 }

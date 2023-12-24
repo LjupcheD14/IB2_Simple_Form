@@ -40,7 +40,7 @@ public class UsersController {
     @PostMapping("/login")
     public String login (@ModelAttribute UsersModel usersModel, Model model){
         System.out.println("login request: " + usersModel);
-        UsersModel authenticated = usersService.authenticate(usersModel.getLogin(), usersModel.getPassword());
+        UsersModel authenticated = usersService.authenticate(usersModel.getLogin(), usersModel.getPassword(), usersModel.getEmail());
         if (authenticated != null){
             model.addAttribute("userLogin", authenticated.getLogin());
             return "personal_page";
